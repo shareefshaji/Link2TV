@@ -1,0 +1,24 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+# Route /api/* → Netlify Functions
+[[redirects]]
+  from = "/api/ping"
+  to   = "/.netlify/functions/ping"
+  status = 200
+
+[[redirects]]
+  from = "/api/set"
+  to   = "/.netlify/functions/set"
+  status = 200
+
+[[redirects]]
+  from = "/api/get"
+  to   = "/.netlify/functions/get"
+  status = 200
+
+[[redirects]]
+  from = "/api/clear"
+  to   = "/.netlify/functions/clear"
+  status = 200

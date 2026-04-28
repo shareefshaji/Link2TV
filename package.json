@@ -1,13 +1,8 @@
 {
   "name": "link2tv",
   "version": "1.0.0",
-  "description": "Send a link from your phone to your TV",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
+  "description": "Send a link from your phone to your TV — Netlify edition",
   "dependencies": {
-    "express": "^4.18.2",
-    "cors": "^2.8.5"
+    "@netlify/blobs": "^8.1.0"
   }
 }
