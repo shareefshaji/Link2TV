@@ -8,11 +8,19 @@ exports.handler = async (event) => {
   }
 
   const store = getStore('link2tv');
-  await store.delete(code).catch(() => {});
+  const entry = await store.getJSON(code).catch(() => null);
+
+  if (!entry) {
+    return {
+      statusCode: 200,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url: null })
+    };
+  }
 
   return {
     statusCode: 200,
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ ok: true })
+    body: JSON.stringify({ url: entry.url })
   };
 };
